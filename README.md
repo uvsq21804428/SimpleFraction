@@ -6,4 +6,4 @@
   javac *.java
   
 #Pour executer le programme:
-  java Main
+  java -ea  Main
