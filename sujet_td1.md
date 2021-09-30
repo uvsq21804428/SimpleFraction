@@ -96,46 +96,56 @@ Vous pouvez répondre en utilisant le shell de votre choix (*bash*, *Powershell*
 Pour répondre à ces questions, vous devez effectuer les recherches documentaires adéquates (livre, web, …).
 
 1. Quel OS et quel shell de commande utilisez-vous ?
-    > Répondre ici
+    J'utilise Mac OSX, et j'utilise le terminal pré installé sur Mac.
+
 1. Quelle commande permet d'obtenir de l'aide ?
 Donnez un exemple.
     ```bash
-    # Répondre ici
+    man ls
     ```
 1. Donnez la ou les commandes shell permettant de
     1. afficher les fichiers d'un répertoire triés par taille (taille affichée lisiblement)
         ```bash
-        # Répondre ici
+        ls -lhS
         ```
     1. compter le nombre de ligne d'un fichier
         ```bash
-        # Répondre ici
+        wc -l fichier.txt
         ```
     1. afficher les lignes du fichier `Main.java` contenant la chaîne `uneVariable`
         ```bash
-        # Répondre ici
+        grep uneVariable Main.java
         ```
     1. afficher récursivement les fichiers `.java` contenant la chaîne `uneVariable`
         ```bash
-        # Répondre ici
+        grep -IR uneVariable *.java
         ```
     1. trouver les fichiers (pas les répertoires) nommés `README.md` dans une arborescence de répertoires
         ```bash
-        # Répondre ici
+        find . -type f -name README.md
         ```
     1. afficher les différences entre deux fichiers textes
         ```bash
-        # Répondre ici
+        diff file1.txt file2.txt
         ```
 1. Expliquez en une ou deux phrases le rôle de ces commandes et dans quel contexte elles peuvent être utiles pour un développeur.
     * `ssh`
-        > Répondre ici
+        La commande "ssh" permet de se connecter à distance sur un autre ordinateur de manière sécurisée, les developpeurs peuvent utiliser
+        cette commabe pour échanger des données de manière sécurisée.
+
     * `screen`/`tmux`
-        > Répondre ici
+        -La commande "screen" permet de lancer plusieurs terminaux en un seul terminal, elle permet également de partager ces terminaux
+         avec d'autres développeurs. Ceci peut être intéréssant pour les travaux en groupe car cela permet de s'organiser plus facilement.
+        -La commande "tmux" permet également de lancer plusieurs terminaux en même temps, elle permet également d'afficher ces deniers dans une seule fenêtre. 
+
     * `curl`/[HTTPie](https://httpie.org/)
-        > Répondre ici
+        Cette commande permet de faire des requêtes à un serveur via des protocoles, grace à cette fonctionnalité, on peut tester
+        des applications ou des logiciels via des diagnostics précis sur ces derniers. 
+
     * [jq](https://stedolan.github.io/jq/)
-        > Répondre ici
+        Avec cette commande, on peut manipuler facilement des données JSON, cela permet d'extraire des données et de les reformer
+        dans un format JSON.
+
 
 ### Découverte de votre *IDE*
 Dans cet exercice, vous expliquerez en quelques phrases comment vous réalisez les actions ci-dessous dans votre IDE.
@@ -143,28 +153,48 @@ Vous pouvez choisir l'IDE/éditeur de texte de votre choix.
 Pour réaliser cette exercice, vous devez bien évidemment vous reporter à la documentations de l'IDE ([IntelliJ IDEA](https://www.jetbrains.com/help/idea/discover-intellij-idea.html#developer-tools), [Visual Studio Code](https://code.visualstudio.com/docs), [Eclipse](https://help.eclipse.org/2020-09/index.jsp), …).
 
 1. Quels IDE ou éditeurs de texte utilisez-vous pour le développement Java ?
-    > Répondre ici
+    J'utilise Visual Studio Code lorsque je travaille sur mon ordinateur fixe, ou Eclipse lorsque je travaille sur mon ordinateur portable.
+    J'utiliserai Eclipse pour la suite de ce TD.
 
     Pour la suite, ne considérez que l'un de vos choix.
 1. Comment vérifier/définir que l'encodage utilisé est *UTF-8* ?
-    > Répondre ici
+    Pour cela, il faut aller dans les "Préférences", ensuite il suffit d'aller dans le "Workspace" puis dans le "text file encoding".
+    Nous pouvons ensuite séléctionner le type d'encodage par défaut.
+
 1. Comment choisir le JDK à utiliser dans un projet ?
-    > Répondre ici
+    Pour cela, il faut aller dans les "Préférences" puis dans "Installed JREs", de là, on séléctionne le jdk que l'on souhaite utiliser.
+
 1. Comment préciser la version Java des sources dans un projet ?
-    > Répondre ici
+    Pour cela, il faut cocher la case "Utiliser une compatibilité propre au projet" lors de la création d'un projet java, puis de séléctionner
+    la version voulue dans la liste déroulante.
+
 1. Comment ajouter une bibliothèque externe dans un projet ?
-    > Répondre ici
+    Pour ajouter une bibliothèque externe dans un projet Eclipse, il faut aller dans "mon projet > propriétés > java build path", on a plus qu'à sélectionner la bibliothèque java que l'on souhaite importer au projet.
+
 1. Comment reformater un fichier source Java ?
-    > Répondre ici
+    Pour ceci, il suffit de faire la combinaison "commande + Maj + f" sur le clavier du Mac.
+
 1. Comment trouver la déclaration d'une variable ou méthode ?
-    > Répondre ici
+    Lorsqu'on double clique sur le nom de la variable ou de la méthode en question, tous les endroits du code où apparaissent le nom de la variable ou de la méthode en question seront surlignés, on peut donc facilement retrouver la déclaration de la variable ou de la méthode sélectionnée.
+
 1. Comment insérer un bloc de code prédéfini (*snippet*) ?
-    > Répondre ici
+    pour un insérer un bloc de code prédéfini il suffit de faire la combinaison "commande + espace" sur le clavier du mac apres avoir ecrit la structure voulue.
+    exemple: on écrit "for" dans le fichier source, puis on fait "commande + espace" pour que la structure du bloc for soit automatiquement inscrite sur le fichier source.
+    Ceci est très pratique pour la création d'une classe ou d'une interface par exemple.
+
 1. Comment renommer une classe dans l'ensemble du projet ?
-    > Répondre ici
+    Pour renommer une classe dans l'ensemble du projet sur Eclipse, il faut faire un clique droit sur le fichier de la classe puis sélectionner "refractor" puis "Rename" puis rentrer le nom de la classe voulue.
+
 1. Comment exécuter le programme en lui passant un paramètre en ligne de commande ?
-    > Répondre ici
+    Une fois que le projet est compilé, on peut écrire en ligne de commande " java 'nom du fichier qui contient le main' 'liste des paramètres' ".
+    exemple: "java Main Hello World", dans ce cas args[0]=Hello et args[1]=World.
+
 1. Comment déboguer le programme en visualisant le contenu d'une ou plusieurs variables ?
-    > Répondre ici
+      On commence par mettre un point d'arrêt à l'endroit voulu en faisant un double clique gauche sur la partie gauche de la ligne choisie.
+      Ensuite on appuie sur le bouton de déboguage. On peut utiliser l'option "step over" pour pouvoir lire ligne par ligne le contenue de la variable souhaité et analyser son comportement au sein du programme, le contenue des variables sont situés sur en haut à gauche de la fenêtre.
+
 1. Quels paramètres ou fonctionnalités vous semblent particulièrement importants/utiles pour le développement Java ?
-    > Répondre ici
+    j'utilise Eclipse car il y a beaucoup d'options pratiques. La création d'un projet automatique sur Eclipse est très importante pour moi car elle me permet de gagner du temps, effectivement le dossier src est automatiquement créé tout comme le dossier qui contiendra les fichier .class.
+    De même lorsque l'on créé une classe sur Eclipse, le corps du fichier source est créer automatiquement, de même pour les constructeurs, les getteurs ainsi que les setteurs. Les packages sont organiser automatiquement selon la demande de l'utilisateur, ce qui est très pratique pour ne pas générer des erreurs lors de l'ajout du mot clé "package" dans l'intégralités des fichiers sources.
+    La fonction très simple du debogueur fourni avec Eclipse est très pratique.
+    Tous ces paramètres permettent de gagner beaucoup de temps, et servent aussi à faire moins d'erreurs, ces deux notions sont très utilies pour développer en Java.
