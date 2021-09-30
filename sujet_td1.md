@@ -31,12 +31,15 @@ En terme de *commits*, quelle différence constatez-vous entre cocher une (ou pl
 Vérifiez que le projet compile et s'exécute dans l'IDE;
 Validez les changements;
     ```bash
-    # Commandes pour valider les changements
+    git add src/Main.java
+    git add src/Fraction.java
+    git commit -m "Ajout des fichiers java"
     ```
 1. Ajoutez un constructeur et la méthode `toString` à la classe `Fraction` et modifiez la classe `Main` en conséquence;
 Validez les changements;
     ```Java
-    // Code pour tester toString
+    Fraction f = new Fraction(1, 2); //On créé une instance de la classe "Fraction"
+    System.out.println(f.toString()); //On affiche le résultat de la méthode "toString()"
     ```
 1. Publiez vos modifications sur le dépôt distant;
 Vous utiliserez le protocole `https` pour cela;
