@@ -73,7 +73,21 @@ Quelle syntaxe est utilisée pour ce fichier ?
     .settings
     ```
 1. Configurez l'accès par clé publique/clé privée à la forge (cf. [Connecting to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)).
-    > Expliquez la procédure de façon synthétique
+    -Pour configurer l'accès par clé publique/privée à la forge, il faut commencer par generer la paire clé publique/privée:
+      sur la machine locale depuis laquelle on veut se connecter au serveur, il faut tapper cette commande:
+        ssh-keygen -b 4096
+      id_rsa est la clé privé, tandis que id_rsa.pub est la clé public
+
+    -Il faut ensuite copier la clé publique sur le serveur, pour cela il faut taper la commande suivante:
+        user@localmachine$ scp ~/.ssh/id_rsa.pub user@remotemachine:/home/user/uploaded_key.pub : on copie la clé sur le serveur distant
+      si le dossier .ssh n'existe pas, il faut alors faire cette suite de commande:
+        user@remotemachine$ mkdir .ssh -> on créé le dossier .ssh
+        user@remotemachine$ chmod 700 .ssh -> on obtient les permissions du dossier
+        user@remotemachine$ touch .ssh/authorized_keys -> on créé ce fichier dans le dossier .ssh
+        user@remotemachine$ chmod 600 .ssh/authorized_keys -> on obtient les permissions du fichier créé
+      Ensuite, il faut copier la clé et supprimer le fichier copié sur le serveur:
+        user@remotemachine$ echo `cat ~/uploaded_key.pub` >> ~/.ssh/authorized_keys
+        user@remotemachine$ rm /home/user/uploaded_key.pub
 
 ## Partie II (à faire à la maison) : révisions et perfectionnement *shell* et *IDE*
 ### Maîtriser le *shell* de commandes
