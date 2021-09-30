@@ -39,32 +39,38 @@ Validez les changements;
 Validez les changements;
     ```Java
     Fraction f = new Fraction(1, 2); //On créé une instance de la classe "Fraction"
-    System.out.println(f.toString()); //On affiche le résultat de la méthode "toString()"
+    assert "1.0/2.0".equals(f.toString()) : "Erreur, la fraction ne s'affiche pas correctement !"; //On test la méthode "toString"
     ```
 1. Publiez vos modifications sur le dépôt distant;
 Vous utiliserez le protocole `https` pour cela;
 Vérifiez avec le navigateur;
     ```bash
-    # Commandes pour publier les modifications
+    git add src/Main.java
+    git add src/Fraction.java
+    git commit -m "message"
+    git push origin master
     ```
 1. Sur la forge, ajoutez un fichier de documentation `README.md`.
 Quelle syntaxe est utilisée pour ce fichier ?
-    > Répondre ici
+    L'extension .md
 1. Récupérez localement les modifications effectuées sur la forge.
     ```bash
-    # Répondre ici
+    git pull origin master
     ```
 1. Ajoutez les répertoires et fichiers issus de la compilation aux fichiers ignorés par `git` (fichier `.gitignore`);
     ```bash
-    # Copier ici le contenu de `.gitignore`
+   *.class
     ```
 1. Retirez les fichiers de configuration de l'IDE du projet;
     ```bash
-    # Répondre ici
+    git rm .classpath .project .settings
     ```
     Ajoutez-les aux fichiers ignorés par `git`.
     ```bash
-    # Copier ici les modifications de `.gitignore`
+    *.class
+    .classpath
+    .project
+    .settings
     ```
 1. Configurez l'accès par clé publique/clé privée à la forge (cf. [Connecting to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)).
     > Expliquez la procédure de façon synthétique

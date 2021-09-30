@@ -1,11 +1,11 @@
 public class Fraction
 {
     //attributs
-    private int numerator;
-    private int denominator;
+    private float numerator;
+    private float denominator;
 
     //constructeur
-    public Fraction(int _numerator, int _denominator){
+    public Fraction(float _numerator, float _denominator){
         numerator = _numerator;
         denominator = _denominator;
     }
